@@ -1,20 +1,23 @@
-#include<stdio.h>
-#include<math.h> /* has  sin(), abs(), and fabs() */
+#include <stdio.h>
+ 
+  
 int main(void)
-{ 
-// double x;
-double interval;
-int i;
-for(i = 0; i <11; i++)
-{ 
- interval = i/10.0;
-  //printf("input x:");
-  //scanf("%lf",&x);
-  printf("sin( %lf ) = %lf \n", interval, fabs(sin(interval)));
-  printf("cos( %lf ) = %lf \n", interval, fabs(cos(interval)));
-}
-
-
-//printf("\n+++++++\n");
-return 0;
+{
+    int nums[1000] = {0};
+    int i = 0;
+    FILE * fp;
+    int sum=0;
+ 
+    fp = fopen("elephant_seal_data.txt", "r");
+        while (fscanf(fp, "%d", &nums[i]) != EOF) {
+            ++i;
+        }
+        fclose(fp);
+ 
+    for (--i; i >= 0; --i) {
+      //  printf("num[%d] = %d\n", i, nums[i]);
+      sum = sum + nums[i];
+    }
+    printf("%lf",sum/1000.0);
+    return 0;
 }
