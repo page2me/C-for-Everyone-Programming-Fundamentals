@@ -1,10 +1,16 @@
 #include<stdio.h>
-#define PI 3.14159
+#include<math.h> /* has  sin(), abs(), and fabs() */
 int main(void)
 { 
- float radius;
- printf("Enter radius:");
- scanf("%f", &radius);
-printf("volume is : %f \n\n", 4.0 *radius*radius*radius/3 );
+double interval;
+int i;
+for(i = 0; i <30; i++)
+{
+ interval = i/10.0;
+ printf("sin( %lf ) = %lf \t", interval, fabs(sin(interval)));
+}
+
+
+printf("\n+++++++\n");
 return 0;
 }
